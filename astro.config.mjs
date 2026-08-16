@@ -7,6 +7,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   
-  site: 'https://yourdomain.com',
+  site: 'https://postoccupancy.github.io',
+  base: '/',
   integrations: [sitemap()]
 });
