@@ -23,7 +23,73 @@ content:
       - name: imageAlt
         type: string
         required: false
-      - name: body-rt
+      - name: body
         type: rich-text
-      - name: body-md
-        type: markdown
+
+  - name: prototypes
+    label: Prototypes
+    type: collection
+    path: src/content/prototypes
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        type: string
+      - name: date
+        type: string
+      - name: category
+        type: string
+        required: false
+      - name: image
+        type: image
+        required: false
+      - name: imageAlt
+        type: string
+        required: false
+
+  - name: installations
+    label: Installations
+    type: collection
+    path: src/content/installations
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        type: string
+      - name: date
+        type: string
+      - name: category
+        type: string
+        required: false
+      - name: image
+        type: image
+        required: false
+      - name: imageAlt
+        type: string
+        required: false
+
+  - name: updates
+    label: Updates
+    type: collection
+    path: src/content/updates
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        type: string
+      - name: date
+        type: string
+      - name: category
+        type: string
+        required: false
+      - name: image
+        type: image
+        required: false
+      - name: imageAlt
+        type: string
+        required: false
+      - name: body
+        type: rich-text
