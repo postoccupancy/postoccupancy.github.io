@@ -1,18 +1,24 @@
 ---
 // Fundation
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
 // Sections
 import Hero from "@/components/sections/Hero.astro";
-import Prototypes from "@/components/sections/Prototypes.astro";
+import ProjectList from "@/components/sections/ProjectList.astro";
+
 // Content
 import { getEntry } from "astro:content";
 const index = await getEntry("pages", "index")
 if (!index) {
   throw new Error("Home page data was not found.")
 }
+
+import { getCollection } from "astro:content";
+const prototypes = await getCollection("prototypes");
+
 ---
 
 <BaseLayout>
   <Hero heading={index.data.heading}/>
-  <Prototypes />
+  <ProjectList />
 </BaseLayout>
