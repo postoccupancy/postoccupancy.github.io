@@ -7,19 +7,20 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 
 import { getCollection } from "astro:content";
 import { imageConfig } from "astro:assets";
-const research = await getCollection("research");
-const sortedResearch = research.sort((a, b) => {
-  return b.data.date.valueOf() - a.data.date.valueOf();
+const prototypes = await getCollection("prototypes");
+const sortedPrototypes = prototypes.sort((a, b) => {
+  return a.data.date.valueOf() - b.data.date.valueOf();
 });
+
 
 ---
 
-<section class="scroll-mt-32" id="research">
+<section class="scroll-mt-32" id="prototypes">
   <Wrapper variant="standard" class="py-12 lg:py-24">
     <div class="grid grid-cols-1 lg:grid-cols-4 items-start">
       <div class="lg:col-start-2">
         <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300"
-          >Featured Projects
+          >Deployed
           <br />
           2026 - Now</Text
         >
@@ -29,15 +30,15 @@ const sortedResearch = research.sort((a, b) => {
         variant="textXL"
         class="font-semibold leading-snug text-left tracking-tighter lg:col-span-2 text-base-900 dark:text-white"
       >
-        Research
+        Prototypes
       </Text>
     </div>
 
-    <div class="flex flex-col lg:gap-12 mt-8">
+    <div class="flex flex-col gap-12 mt-8">
       {
-        sortedResearch.map((project) => (
+        sortedPrototypes.map((project) => (
           <article class="py-12 border-t border-base-200 dark:border-base-800">
-            <div class="grid grid-cols-1 lg:grid-cols-4 items-start">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 items-start">
               <Text
                 tag="p"
                 variant="textXS"
@@ -71,8 +72,8 @@ const sortedResearch = research.sort((a, b) => {
             </div>
             {project.data.image && (
               <Image
-                width={1420}
-                height={930}
+                width={1200}
+                height={630}
                 src={project.data.image}
                 alt={project.data.imageAlt ?? ""}
                 loading="lazy"

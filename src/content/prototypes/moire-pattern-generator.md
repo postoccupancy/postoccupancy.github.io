@@ -1,8 +1,7 @@
 ---
-title: "What Temperature and Humidity Sound Like"
-description: "Experiments in treating environmental time series as musical material."
-date: 2026-08-16
-status: "Active"
+title: "Moiré Pattern Generator"
+description: "Interactive p5.js visual responding to MIDI control change values, based on an episode of the 1980s science show Mr. Wizard."
+date: 2026-01-03
 image: ""
 imageAlt: ""
 ---

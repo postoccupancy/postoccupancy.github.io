@@ -2,34 +2,11 @@ media:
   input: public/images
   output: /images
 content:
-  - name: research
-    label: Research
-    type: collection
-    path: src/content/research
-    fields:
-      - name: title
-        label: Title
-        type: string
-      - name: description
-        type: string
-      - name: date
-        type: string
-      - name: category
-        type: string
-        required: false
-      - name: image
-        type: image
-        required: false
-      - name: imageAlt
-        type: string
-        required: false
-      - name: body
-        type: rich-text
-
   - name: prototypes
     label: Prototypes
     type: collection
     path: src/content/prototypes
+
     fields:
       - name: title
         label: Title
@@ -48,48 +25,18 @@ content:
         type: string
         required: false
 
-  - name: installations
-    label: Installations
-    type: collection
-    path: src/content/installations
-    fields:
-      - name: title
-        label: Title
-        type: string
-      - name: description
-        type: string
-      - name: date
-        type: string
-      - name: category
-        type: string
-        required: false
-      - name: image
-        type: image
-        required: false
-      - name: imageAlt
-        type: string
-        required: false
+  - name: intro
+    label: Intro
+    type: file
+    path: src/content/headings/intro.md
+    format: yaml-frontmatter
 
-  - name: updates
-    label: Updates
-    type: collection
-    path: src/content/updates
+    operations:
+      delete: false
+
     fields:
-      - name: title
-        label: Title
+      - name: heading
+        label: Heading
         type: string
-      - name: description
-        type: string
-      - name: date
-        type: string
-      - name: category
-        type: string
-        required: false
-      - name: image
-        type: image
-        required: false
-      - name: imageAlt
-        type: string
-        required: false
-      - name: body
-        type: rich-text
+        required: true
+

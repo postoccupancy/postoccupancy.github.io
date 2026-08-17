@@ -1,4 +1,10 @@
 ---
+// Content
+import { getEntry } from "astro:content";
+const intro = await getEntry("headings", "intro")
+if (!intro) {
+  throw new Error("Landing intro content was not found.")
+}
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
@@ -12,7 +18,7 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
         variant="displayLG"
         class="font-semibold leading-snug text-left tracking-tighter lg:col-span-2 text-base-900 dark:text-white lg:col-start-3"
       >
-        Environmental data studio, Seattle. Code. Design. Art. Science. Music.
+        {intro.data.heading}
       </Text>
     </div>
   </Wrapper>
