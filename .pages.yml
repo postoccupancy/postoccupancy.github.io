@@ -81,15 +81,6 @@ content:
         type: string
         required: true
 
-  - name: sections
-    label: Page sections
-    type: block
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{fields.heading}"
-    blocks:
-      Hero, ProjectList
 
   - name: about
     label: About
