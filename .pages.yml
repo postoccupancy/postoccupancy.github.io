@@ -1,0 +1,29 @@
+media: 
+  input: public/images
+  output: /images
+content:
+  - name: research
+    label: Research
+    type: collection
+    path: src/content/research
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        type: string
+      - name: date
+        type: string
+      - name: category
+        type: string
+        required: false
+      - name: image
+        type: image
+        required: false
+      - name: imageAlt
+        type: string
+        required: false
+      - name: body-rt
+        type: rich-text
+      - name: body-md
+        type: markdown
