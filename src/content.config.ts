@@ -17,14 +17,14 @@ const prototypes = defineCollection({
   }),
 });
 
-const headings = defineCollection({
+const pages = defineCollection({
   loader: glob({
     pattern: "**/*.md",
-    base: "./src/content/headings"
+    base: "./src/content/pages"
   }),
   schema: z.object({
     heading: z.string(),
   })
 })
 
-export const collections = { prototypes, headings };
+export const collections = { prototypes, pages };

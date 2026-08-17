@@ -11,24 +11,65 @@ content:
       - name: title
         label: Title
         type: string
+
       - name: description
         type: string
+
       - name: date
         type: string
+
       - name: category
         type: string
         required: false
+
       - name: image
         type: image
         required: false
+
       - name: imageAlt
         type: string
         required: false
 
-  - name: intro
-    label: Intro
+  - name: navbar
+    label: Navbar
     type: file
     path: src/content/headings/intro.md
+    format: yaml-frontmatter
+
+    operations:
+      delete: false
+
+    fields:
+      - name: logo
+        label: Logo
+        type: string
+        required: true
+
+      - name: location
+        label: Location
+        type: string
+        required: false
+
+      - name: category
+        label: Category
+        type: string
+        required: false
+
+      - name: cta-text
+        label: CTA Text
+        type: string
+        required: false
+      
+      - name: cta-link
+        label: CTA Link
+        type: string
+        required: false
+
+
+  - name: home
+    label: Home
+    type: file
+    path: src/content/pages/index.md
     format: yaml-frontmatter
 
     operations:
@@ -40,3 +81,32 @@ content:
         type: string
         required: true
 
+      - name: sections
+        label: Page sections
+        type: block
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.heading}"
+        blocks:
+          Hero, ProjectList
+
+  - name: about
+    label: About
+    type: file
+    path: src/content/pages/about.md
+    format: yaml-frontmatter
+
+    operations:
+      delete: false
+
+    fields:
+      - name: heading
+        label: Heading
+        type: string
+        required: false
+
+      - name: body
+        label: Body
+        type: rich-text
+        required: false
