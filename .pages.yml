@@ -101,3 +101,14 @@ content:
         label: Body
         type: rich-text
         required: false
+
+
+  - name: sections
+    label: Page sections
+    type: block
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.heading}"
+    blocks:
+      Hero, ProjectList
