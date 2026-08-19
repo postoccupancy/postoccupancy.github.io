@@ -5,7 +5,7 @@ import { z } from "astro/zod";
 const prototypes = defineCollection({
   loader: glob({
     pattern: "**/*.md",
-    base: "./src/content/prototypes",
+    base: "./src/content/collections/prototypes",
   }),
   schema: z.object({
     title: z.string(),
@@ -17,14 +17,14 @@ const prototypes = defineCollection({
   }),
 });
 
-const pages = defineCollection({
+const files = defineCollection({
   loader: glob({
     pattern: "**/*.md",
-    base: "./src/content/pages"
+    base: "./src/content/files"
   }),
   schema: z.object({
     heading: z.string(),
   })
 })
 
-export const collections = { prototypes, pages };
+export const collections = { prototypes, files };

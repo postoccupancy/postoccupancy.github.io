@@ -69,7 +69,7 @@ content:
   - name: home
     label: Home
     type: file
-    path: src/content/pages/index.md
+    path: src/content/files/index.md
     format: yaml-frontmatter
 
     operations:
@@ -81,11 +81,54 @@ content:
         type: string
         required: true
 
+      - name: sections
+        label: Page sections
+        type: block
+        list: true
+        blockKey: type
+
+        blocks:
+          - name: hero
+            label: Hero
+            fields:
+              - name: heading
+                label: Heading
+                type: string
+                required: true
+
+          - name: project-list
+            label: Project List
+            fields:
+              - name: heading
+                label: Heading
+                type: string
+                required: true
+
+              - name: subheading
+                label: Subheading
+                type: string
+                required: false
+
+              - name: date-range
+                label: Date Range
+                type: string
+                required: false
+
+              - name: sort
+                label: Sort
+                type: select
+                options:
+                  values:
+                    - name: asc
+                      label: Ascending
+                    - name: desc
+                      label: Descending
+                default: asc
 
   - name: about
     label: About
     type: file
-    path: src/content/pages/about.md
+    path: src/content/files/about.md
     format: yaml-frontmatter
 
     operations:
@@ -102,13 +145,3 @@ content:
         type: rich-text
         required: false
 
-
-  - name: sections
-    label: Page sections
-    type: block
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{fields.heading}"
-    blocks:
-      Hero, ProjectList

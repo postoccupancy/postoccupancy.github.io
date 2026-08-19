@@ -1,9 +1,15 @@
 ---
 // Fundation
 import BaseLayout from "@/layouts/BaseLayout.astro";
-// Sections
+// Files
+import { getEntry } from "astro:content";
+const about = await getEntry("files", "about")
+if (!about) {
+  throw new Error("About page data was not found.")
+}
 ---
 
 <BaseLayout>
-  <h1 style="margin-top: 60px">Hello!</h1>
+  <h1 style="margin-top: 60px">{about.data.heading}</h1>
+  <p style="margin-top: 20px">{about.body}</p>
 </BaseLayout>
