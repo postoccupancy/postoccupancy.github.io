@@ -124,6 +124,15 @@ content:
                     - name: desc
                       label: Descending
                 default: asc
+              
+              - name: collection
+                label: Collection
+                type: select
+                options:
+                  values:
+                    - name: prototypes
+                      label: Prototypes
+                default: prototypes
 
   - name: about
     label: About
